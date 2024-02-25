@@ -31,6 +31,7 @@
       <img src="./Images/2024-02-25_16-18.png" width="100%">
       <p align="center"><a href="./Nvim/">NVIM Config</a></p>
       <p align="center">
+        <p align="center">Note: For Nvim to stay the same, you need to clone the Lazzy vim repository and follow all the steps and then clone my settings (If there is an error, contact me)</p>
         <img src="./Images/2024-02-25_16-21.png" width="85%">
         <img src="./Images/2024-02-25_16-23.png" width="85%">
       </p>
