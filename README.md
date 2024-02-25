@@ -9,6 +9,7 @@
 
 <!-- ABOUT ME -->
 ## **About:**
+- :computer: My distro linux is `Pop OS`.
 - :computer: The terminal I use most is `Kitty`.
 - :technologist: My code editors are `nvim` and `vscode`.
 - :technologist: In my terminal I use the `ZSH` manager and `neofetch` for customization.
