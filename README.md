@@ -1,4 +1,4 @@
-#<p align="center">Here are the settings for the programs I use most</p>
+<p align="center">Here are the settings for the programs I use most</p>
 <p align="center"><a href="https://twitter.com/samuell_vitoorr"><img src="https://img.shields.io/badge/twitter-742273?style=for-the-badge&logoColor=F2F2F2&logo=twitter"/></a>
 <a href="https://linkedin.com/in/samuel-vitor"><img src="https://img.shields.io/badge/linkedin-742273?style=for-the-badge&logoColor=F2F2F2&logo=linkedin"/></a>
 <a href="https://instagram.com/in/#"><img src="https://img.shields.io/badge/instagram-742273?style=for-the-badge&logoColor=F2F2F2&logo=instagram"/></a>
