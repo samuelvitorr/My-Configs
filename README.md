@@ -23,7 +23,7 @@
 <!-- MY SKILLS -->
 ## **Shortcut to settings:**
 <details>
-  <summary>🧮 summary </summary>
+  <summary>🧮 Fotos </summary>
   <div>
     <samp>
       <p align="center"><a href="./Kitty/kitty.conf">Kitty Config</a></p>
