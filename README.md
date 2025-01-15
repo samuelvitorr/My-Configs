@@ -12,7 +12,7 @@
 - :computer: The terminal I use most is `Kitty` and `Windows Terminal`.
 - :technologist: My code editors are `nvim`, `vscode`, `PyCharm` and `IntelliJ`.
 - :technologist: In my Linux terminal I use `ZSH` and in my Windows terminal I use `PowerShell` and `Neofetch` to customize.
-- :technologist: note in all my programs I use the `catppuccin` theme.
+- :technologist: Note in all my programs I use the `catppuccin` theme.
 
 <!-- MY SYSTEMS -->
 ## **Shortcut to Os:**
@@ -31,7 +31,7 @@
 </details>
 
 <!-- MY SKILLS -->
-## **Shortcut to settings:**
+## **Shortcut to Settings:**
 <details>
   <summary>🧮 Fotos </summary>
   <div>
