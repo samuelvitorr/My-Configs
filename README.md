@@ -38,7 +38,7 @@
     <samp>
       <p align="center"><a href="./Kitty/kitty.conf">Kitty Config</a></p>
       <img src="./Images/2024-02-25_16-18.png" width="100%">
-      <p align="center"><a href="./windowsTerminal/settings.json">Windows Terminal Config</a></p>
+      <p align="center"><a href="./WindowsTerminal/settings.json">Windows Terminal Config</a></p>
       <img src="./Images/2025-01-14_22-51.png" width="100%">
       <p align="center"><a href="./Neofetch/config.conf">NEOFETCH Config</a></p>
       <img src="./Images/2024-02-25_16-18.png" width="100%">
