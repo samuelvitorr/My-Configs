@@ -11,7 +11,7 @@
 - :computer: My Os linux is `Pop OS` / Windosows `11` /  Wsl `2`.
 - :computer: The terminal I use most is `Kitty` and `Windows Terminal`.
 - :technologist: My code editors are `nvim`, `vscode`, `PyCharm` and `IntelliJ`.
-- :technologist: In my Linux terminal I use ZSH and in my Windows terminal I use PowerShell and Neofetch to customize.
+- :technologist: In my Linux terminal I use `ZSH` and in my Windows terminal I use `PowerShell` and `Neofetch` to customize.
 - :technologist: note in all my programs I use the `catppuccin` theme.
 
 <!-- MY SYSTEMS -->
@@ -56,9 +56,9 @@
       <img src="./Images/2025-01-14_23-52.png" width="100%">
       <p align="center">IntelliJ</p>
       <img src="./Images/2025-01-14_23-54.png" width="100%">
-      <p align="center"><a href="./ZSH/zshrc">ZSH Config</a></p>
+      <p align="center"><a href="./Zsh/.zshrc">ZSH Config</a></p>
       <img src="./Images/2024-02-25_16-18.png" width="100%">
-      <p align="center"><a href="./Zsh/.zshrc">PowerShell Config</a></p>
+      <p align="center">PowerShell</p>
       <img src="./Images/2025-01-14_22-51.png" width="100%">
     </samp>
   </div>
