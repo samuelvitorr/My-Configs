@@ -65,7 +65,7 @@
       <p align="center">IntelliJ</p>
       <img src="./Images/2025-10-17_18-56-09.png" width="100%">
       <p align="center"><a href="./fish/config.fish">Fish Config</a></p>
-      <img src="./Images/2024-02-25_16-18.png" width="100%">
+      <img src="./Images/2025-10-17_18-47-04.png" width="100%">
       <p align="center">PowerShell</p>
       <img src="./Images/2025-01-14_22-51.png" width="100%">
     </samp>
