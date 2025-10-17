@@ -42,32 +42,32 @@
   <summary>📚 Fotos </summary>
   <div>
     <samp>
-      <p align="center"><a href="./kitty/kitty.conf">Kitty Config</a></p>
-      <img src="./Images/2025-10-17_18-47-04.png" width="100%">
-      <p align="center"><a href="./tmux/tmux.conf">Tmux Config</a></p>
-      <img src="./Images/2025-10-17_19-19-57.png" width="100%">
-      <p align="center"><a href="./WindowsTerminal/settings.json">Windows Terminal Config</a></p>
+      <p align="center"><a href="/Kitty/kitty.conf">Kitty Config</a></p>
+      <img src="/Images/2025-10-17_18-47-04.png" width="100%">
+      <p align="center"><a href="/Tmux/.tmux.conf">Tmux Config</a></p>
+      <img src="/Images/2025-10-17_19-19-57.png" width="100%">
+      <p align="center"><a href="/WindowsTerminal/settings.json">Windows Terminal Config</a></p>
       <img src="./Images/2025-01-14_22-51.png" width="100%">
-      <p align="center"><a href="./Neofetch/config.conf">NEOFETCH Config</a></p>
-      <img src="./Images/2025-10-17_18-47-04.png" width="100%">
-      <p align="center"><a href="./Nvim/">NVIM Config</a></p>
+      <p align="center"><a href="/Neofetch/config.conf">NEOFETCH Config</a></p>
+      <img src="/Images/2025-10-17_18-47-04.png" width="100%">
+      <p align="center"><a href="/Nvim/">NVIM Config</a></p>
       <p align="center">Linux version</p>
-      <img src="./Images/2025-10-17_18-47-56.png" width="100%">
-      <img src="./Images/2025-10-17_18-49-35.png" width="100%">
+      <img src="/Images/2025-10-17_18-47-56.png" width="100%">
+      <img src="/Images/2025-10-17_18-49-35.png" width="100%">
       <p align="center">Windows version</p>
-      <img src="./Images/2025-01-14_23-34.png" width="100%">
-      <img src="./Images/2025-01-14_23-36.png" width="100%">
+      <img src="/Images/2025-01-14_23-34.png" width="100%">
+      <img src="/Images/2025-01-14_23-36.png" width="100%">
       <p>Note: For Nvim to stay the same, you need to clone the <a href="https://www.lazyvim.org/installation">Lazzy vim repository</a> and follow all the steps and then clone my settings (If there is an error, contact me)</p>
-      <p align="center"><a href="./VScode/settings.json">VSCode Config</a></p>
-      <img src="./Images/2025-10-17_18-50-44.png" width="100%">
+      <p align="center"><a href="/VScode/settings.json">VSCode Config</a></p>
+      <img src="/Images/2025-10-17_18-50-44.png" width="100%">
       <p align="center">Pycharm</p>
-      <img src="./Images/2025-10-17_18-57-22.png" width="100%">
+      <img src="/Images/2025-10-17_18-57-22.png" width="100%">
       <p align="center">IntelliJ</p>
-      <img src="./Images/2025-10-17_18-56-09.png" width="100%">
-      <p align="center"><a href="./fish/config.fish">Fish Config</a></p>
-      <img src="./Images/2025-10-17_18-47-04.png" width="100%">
+      <img src="/Images/2025-10-17_18-56-09.png" width="100%">
+      <p align="center"><a href="/Fish/config.fish">Fish Config</a></p>
+      <img src="/Images/2025-10-17_18-47-04.png" width="100%">
       <p align="center">PowerShell</p>
-      <img src="./Images/2025-01-14_22-51.png" width="100%">
+      <img src="/Images/2025-01-14_22-51.png" width="100%">
     </samp>
   </div>
 </details>
@@ -77,3 +77,6 @@
 
 <!-- GIF HEADER -->
 <img src="https://github.com/AnderMendoza/AnderMendoza/raw/main/assets/banner-header.gif">
+
+
+[def]: /kitty/kitty.con
