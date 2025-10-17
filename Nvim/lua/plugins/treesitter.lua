@@ -1,76 +1,79 @@
 return {
-  -- add more treesitter parsers
-
-  {
-    "nvim-treesitter/nvim-treesitter-context",
-    lazy = true,
-    config = function()
-      require("treesitter-context").setup({
-        enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
-        max_lines = 1, -- How many lines the window should span. Values <= 0 mean no limit.
-        min_window_height = 0, -- Minimum editor window height to enable context. Values <= 0 mean no limit.
-        line_numbers = true,
-        multiline_threshold = 20, -- Maximum number of lines to show for a single context
-        trim_scope = "outer", -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
-        mode = "cursor", -- Line used to calculate context. Choices: 'cursor', 'topline'
-        -- Separator between context and content. Should be a single character string, like '-'.
-        -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
-        separator = nil,
-        zindex = 20, -- The Z-index of the context window
-        on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
-      })
-    end,
+  "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
+  event = { "BufReadPre", "BufNewFile" },
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    "windwp/nvim-ts-autotag",
   },
-  {
-    "nvim-ts-autotag",
-    config = function()
-      require("nvim-ts-autotag").setup({})
-    end,
-  },
-  {
-    "nvim-treesitter/nvim-treesitter",
-    dependencies = {
-      "JoosepAlviste/nvim-ts-context-commentstring",
-      "nvim-treesitter/nvim-treesitter-textobjects",
-      "nvim-treesitter/nvim-treesitter-context",
-      "windwp/nvim-ts-autotag",
-    },
-    opts = function(_, opts)
-      -- add tsx and treesitter
-      vim.list_extend(opts.ensure_installed, {
+  config = function()
+    require("nvim-treesitter.configs").setup({
+      modules = {},
+      ensure_installed = {
+        "c",
+        "cpp",
+        "go",
+        "rust",
+        "cmake",
         "bash",
+        "lua",
+        "vim",
+        "vimdoc",
         "html",
         "css",
         "javascript",
+        "typescript",
+        "tsx",
         "json",
-        "lua",
+        "yaml",
+        "toml",
         "markdown",
         "markdown_inline",
         "python",
-        "query",
-        "graphql",
-        "prisma",
-        "regex",
-        "tsx",
-        "typescript",
-        "vim",
-        "yaml",
-      })
+      },
+      sync_install = false,
+      auto_install = true,
+      ignore_install = {},
 
-      -- vim.list_extend(opts.autotag, {
-      --   enable = true,
-      -- })
-    end,
-  },
-  {
-    "norcalli/nvim-colorizer.lua",
-    config = function()
-      require("colorizer").setup()
-    end,
-  },
-  {
-    "fladson/vim-kitty",
-    ft = "kitty.conf",
-    event = "VeryLazy",
-  },
+      highlight = {
+        enable = true,
+        disable = {
+          -- add languages. Ex.: "markdown", "toml", etc
+        },
+        additional_vim_regex_highlighting = false,
+      },
+      indent = {
+        enable = true,
+      },
+      autotag = {
+        enable = true,
+      },
+      textobjects = {
+        select = {
+          enable = true,
+          lookahead = true,
+          keymaps = {
+            ["af"] = "@function.outer",
+            ["if"] = "@function.inner",
+            ["ac"] = "@class.outer",
+            ["ic"] = "@class.inner",
+            ["as"] = "@scope",
+          },
+        },
+        move = {
+          enable = true,
+          set_jumps = true,
+          goto_next_start = {
+            ["]f"] = "@function.outer",
+            ["]c"] = "@class.outer",
+          },
+          goto_previous_start = {
+            ["[f"] = "@function.outer",
+            ["[c"] = "@class.outer",
+          },
+        },
+        swap = {},
+      },
+    })
+  end,
 }

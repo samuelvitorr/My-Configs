@@ -1,30 +1,13 @@
 return {
-  {
-    "nvim-telescope/telescope.nvim",
-
-    dependencies = {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      {
-        "nvim-telescope/telescope-live-grep-args.nvim",
-        -- This will not install any breaking changes.
-        -- For major updates, this must be adjusted manually.
-        version = "^1.0.0",
-      },
+  "nvim-telescope/telescope.nvim",
+  tag = "0.1.8",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "crispgm/telescope-heading.nvim",
+  },
+  extensions = {
+    heading = {
+      treesitter = true,
     },
-    keys = {
-      {
-        "<leader>fp",
-        function()
-          require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root })
-        end,
-        desc = "Find Plugin File",
-      },
-    },
-    cmd = "Telescope",
-    build = "make",
-    config = function()
-      require("telescope").load_extension("fzf")
-      require("telescope").load_extension("live_grep_args")
-    end,
   },
 }

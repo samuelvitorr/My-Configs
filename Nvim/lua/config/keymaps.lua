@@ -1,60 +1,150 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
---
-local function map(mode, lhs, rhs, opts)
-  local keys = require("lazy.core.handler").handlers.keys
-  ---@cast keys LazyKeysHandler
-  -- do not create the keymap if a lazy keys handler exists
-  if not keys.active[keys.parse({ lhs, mode = mode }).id] then
-    opts = opts or {}
-    opts.silent = opts.silent ~= false
-    if opts.remap and not vim.g.vscode then
-      opts.remap = nil
-    end
-    vim.keymap.set(mode, lhs, rhs, opts)
+vim.g.mapleader = " "
+
+local map = vim.keymap.set
+local opts = { noremap = true, silent = true }
+local utils = require("config.utils")
+
+-- Insert mode: jj = ESC
+map("i", "jj", "<Esc>", opts)
+
+-- Delete no insert
+-- map("i", "<C-h>", "<BS>", opts)
+-- map("i", "<C-l>", "<Del>", opts)
+
+-- Navegação entre splits
+map("n", "<C-h>", "<C-w>h", opts)
+map("n", "<C-j>", "<C-w>j", opts)
+map("n", "<C-k>", "<C-w>k", opts)
+map("n", "<C-l>", "<C-w>l", opts)
+
+-- Leader shortcuts
+map("n", "<leader>w", ":w<CR>", opts)
+map("n", "<leader>h", ":noh<CR>", opts)
+
+-- diagnostics (LSP)
+map("n", "gl", vim.diagnostic.open_float, opts)
+
+-- Toggle diagnostics on/off
+map("n", "<leader>dt", function()
+  if vim.diagnostic.is_enabled() then
+    utils.notify("Diagnostic disabled")
+    vim.diagnostic.enable(false)
+  else
+    utils.notify("Diagnostic enabled")
+    vim.diagnostic.enable()
   end
-end
+end)
 
--- Oil.nvim
-map("n", "-", "<cmd>Oil<cr>", { desc = "Open oil.nvim" })
-map("n", "<leader>-", function()
-  require("oil").toggle_float()
-end, { desc = "Open parent directory in floating window" })
-
--- Neo-tree
-map("n", "<leader>E", "<cmd>Neotree toggle buffers<cr>", { desc = "Toggle Buffers Explorer" })
+-- Conform format
+map({ "n", "v" }, "<leader>f", function()
+  utils.notify("Manually formatting with <leader>f...", vim.log.levels.INFO)
+  require("conform").format({ async = false, lsp_fallback = true })
+end, { desc = "Format file or range (conform)" })
 
 -- Telescope
-map("n", "<C-p>", "<cmd>Telescope find_files<cr>")
-map("n", "<leader>fw", "<cmd>Telescope live_grep<cr>")
-map("n", "<leader>fa", "<cmd>Telescope live_grep_args<cr>")
+local builtin = require("telescope.builtin")
+map("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
+map("n", "<leader>fg", builtin.live_grep, { desc = "Live grep" })
+map("n", "<leader>fb", builtin.buffers, { desc = "List open buffers" })
+map("n", "<leader>fh", builtin.help_tags, { desc = "Search help tags" })
+map("n", "<leader>fo", builtin.oldfiles, { desc = "Recently opened files" })
+map(
+  "n",
+  "<leader>fc",
+  builtin.current_buffer_fuzzy_find,
+  { desc = "Fuzzy search in current buffer" }
+)
+map(
+  "n",
+  "<leader>fr",
+  builtin.resume,
+  { desc = "Resume last Telescope picker" }
+)
+map(
+  "n",
+  "<leader>fs",
+  builtin.lsp_document_symbols,
+  { desc = "Document symbols (LSP)" }
+)
 
--- Tranparent
-map("n", "<leader>uT", "<cmd>TransparentEnable<cr>", { desc = "Enable background transparency" })
-map("n", "<leader>ut", "<cmd>TransparentToggle<cr>", { desc = "Toggle background transparency" })
+-- Buffers
+map("n", "<leader><tab>", "<C-^>", { desc = "Toggle last buffer" })
+map("n", "<Tab>", ":bnext<CR>", opts)
+map("n", "<S-Tab>", ":bprevious<CR>", opts)
+map("n", "<leader>bd", ":bdelete<CR>", { desc = "Fechar buffer" })
+map("n", "<leader>bu", "<C-^>", { desc = "Reabrir último buffer" })
 
--- mini.nvim
-map("n", "<leader>C", function()
-  require("mini.bufremove").delete(0, false)
-end, { desc = "Delete Buffer" })
+-- WrapIn
+-- Wrap com parênteses
+map(
+  "v",
+  "<leader>wp",
+  "<Esc><Cmd>lua require('settings.utils').wrap_in_chars('(')<CR>",
+  { desc = "Wrap parentheses - ( and )" }
+)
+map(
+  "v",
+  "<leader>wq",
+  "<Esc><Cmd>lua require('settings.utils').wrap_in_chars('\\'')<CR>",
+  { desc = "Wrap single quotes - ' and '" }
+)
+map(
+  "v",
+  "<leader>wQ",
+  "<Esc><Cmd>lua require('settings.utils').wrap_in_chars('\"')<CR>",
+  { desc = 'Wrap double quotes - " and "' }
+)
+map(
+  "v",
+  "<leader>ws",
+  "<Esc><Cmd>lua require('settings.utils').wrap_in_chars('[')<CR>",
+  { desc = "Wrap square brackets - [ and ]" }
+)
+map(
+  "v",
+  "<leader>wc",
+  "<Esc><Cmd>lua require('settings.utils').wrap_in_chars('{')<CR>",
+  { desc = "Wrap curly braces - { and }" }
+)
+map(
+  "v",
+  "<leader>wb",
+  "<Esc><Cmd>lua require('settings.utils').wrap_in_chars('`')<CR>",
+  { desc = "Wrap backtick - ` and `" }
+)
+map(
+  "v",
+  "<leader>wh",
+  "<Esc><Cmd>lua require('settings.utils').wrap_in_chars('<')<CR>",
+  { desc = "Wrap HTML - < and >" }
+)
 
--- some utilities
-map("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Search and Replace RegExp" })
-map("n", "tn", "<cmd>tabnew<cr>")
-map("n", "<leader>n", "<cmd>noh<cr>", { desc = "Remove highlighting of search matches" })
+-- Word Wrap
+vim.keymap.set("n", "<leader>ww", function()
+  if vim.wo.wrap then
+    vim.opt.wrap = false
+    vim.opt.linebreak = false
+    vim.opt.breakindent = false
+    utils.notify("Softwrap desativado", vim.log.levels.INFO)
+  else
+    vim.opt.wrap = true
+    vim.opt.linebreak = true
+    vim.opt.breakindent = true
+    utils.notify("Softwrap ativado", vim.log.levels.INFO)
+  end
+end, { desc = "Toggle Softwrap" })
 
--- utilities to center the screen
-map("n", "<C-d>", "<C-d>zz")
-map("n", "<C-u>", "<C-u>zz")
-map("n", "n", "nzzzv")
-map("n", "N", "Nzzzv")
-
--- visual
-map("v", "p", '"_dP')
-map("v", "<", "<gv")
-map("v", ">", ">gv")
-
--- moving lines
-map("x", "J", ":m '>+1<cr>gv=gv")
-map("x", "K", ":m '<-2<cr>gv=gv")
+-- Toggle Spell -- Toggle Spell Checker
+vim.keymap.set("n", "<leader>ss", function()
+  if vim.wo.spell then
+    vim.opt.spell = false
+    utils.notify("Spell checker desativado", vim.log.levels.INFO)
+  else
+    vim.opt.spell = true
+    vim.opt.spelllang = { "pt_br", "pt", "en_us", "en" }
+    utils.notify("Spell checker ativado", vim.log.levels.INFO)
+  end
+end, { desc = "Toggle Spell Checker" })

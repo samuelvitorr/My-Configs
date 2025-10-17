@@ -1,74 +1,51 @@
 return {
-  "goolord/alpha-nvim",
-  event = "VimEnter",
-  enabled = true,
-  init = false,
-  opts = function()
-    local dashboard = require("alpha.themes.dashboard")
-    local logo = [[
-        ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗
-	      ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║
-	      ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║
-	      ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║
-	      ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║
-	      ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝
+  {
+    "goolord/alpha-nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    event = "VimEnter",
+    config = function()
+      local alpha = require("alpha")
+      local dashboard = require("alpha.themes.dashboard")
 
-	                         [ @samuelvitorr ]
-    ]]
+      -- Define o highlight customizado para a logo usando a cor do Catppuccin Pink
+      vim.api.nvim_set_hl(0, "AlphaLogo", { fg = "#f5c2e7", bold = true })
 
-    dashboard.section.header.val = vim.split(logo, "\n")
-    -- stylua: ignore
-    dashboard.section.buttons.val = {
-      dashboard.button("f", " " .. " Find file",       "<cmd> Telescope find_files <cr>"),
-      dashboard.button("n", " " .. " New file",        "<cmd> ene <BAR> startinsert <cr>"),
-      dashboard.button("r", " " .. " Recent files",    "<cmd> Telescope oldfiles <cr>"),
-      dashboard.button("g", " " .. " Find text",       "<cmd> Telescope live_grep <cr>"),
-      dashboard.button("c", " " .. " Config",          "<cmd> lua require('lazyvim.util').telescope.config_files()() <cr>"),
-      dashboard.button("s", " " .. " Restore Session", [[<cmd> lua require("persistence").load() <cr>]]),
-      dashboard.button("x", " " .. " Lazy Extras",     "<cmd> LazyExtras <cr>"),
-      dashboard.button("l", "󰒲 " .. " Lazy",            "<cmd> Lazy <cr>"),
-      dashboard.button("q", " " .. " Quit",            "<cmd> qa <cr>"),
-    }
-    for _, button in ipairs(dashboard.section.buttons.val) do
-      button.opts.hl = "AlphaButtons"
-      button.opts.hl_shortcut = "AlphaShortcut"
-    end
-    dashboard.section.header.opts.hl = "AlphaHeader"
-    dashboard.section.buttons.opts.hl = "AlphaButtons"
-    dashboard.section.footer.opts.hl = "AlphaFooter"
-    dashboard.opts.layout[1].val = 8
-    return dashboard
-  end,
-  config = function(_, dashboard)
-    -- close Lazy and re-open when the dashboard is ready
-    if vim.o.filetype == "lazy" then
-      vim.cmd.close()
-      vim.api.nvim_create_autocmd("User", {
-        once = true,
-        pattern = "AlphaReady",
-        callback = function()
-          require("lazy").show()
-        end,
-      })
-    end
+      dashboard.section.header.val = {
+        "███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗",
+        "████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║",
+        "██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║",
+        "██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║",
+        "██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║",
+        "╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝",
+        "",
+        "                   [ @samuelvitorr ]              ",
+      }
 
-    require("alpha").setup(dashboard.opts)
+      -- Aplica o highlight customizado na logo
+      dashboard.section.header.opts.hl = "AlphaLogo"
 
-    vim.api.nvim_create_autocmd("User", {
-      once = true,
-      pattern = "LazyVimStarted",
-      callback = function()
-        local stats = require("lazy").stats()
-        local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-        dashboard.section.footer.val = "⚡ Neovim loaded "
-          .. stats.loaded
-          .. "/"
-          .. stats.count
-          .. " plugins in "
-          .. ms
-          .. "ms"
-        pcall(vim.cmd.AlphaRedraw)
-      end,
-    })
-  end,
+      dashboard.section.buttons.val = {
+        dashboard.button("f", "  Find file", ":Telescope find_files<CR>"),
+        dashboard.button("n", "  New file", ":ene <BAR> startinsert <CR>"),
+        dashboard.button("r", "  Recent files", ":Telescope oldfiles<CR>"),
+        dashboard.button("g", "  Find text", ":Telescope live_grep<CR>"),
+        dashboard.button("c", "  Config", ":e $MYVIMRC <CR>"),
+        dashboard.button("q", "  Quit", ":qa<CR>"),
+      }
+
+      dashboard.section.footer.val = "Samuel Vitor ✨   LazyVim Ready"
+      dashboard.section.footer.opts.hl = "Constant"
+
+      alpha.setup(dashboard.config)
+    end,
+  },
+
+  -- Força desativação do snacks_picker
+  { import = "lazyvim.plugins.extras.editor.snacks_picker", enabled = false },
+
+  -- Também desativa o mini.starter se estiver presente
+  { "nvim-mini/mini.starter", enabled = false },
 }
+
+
+
