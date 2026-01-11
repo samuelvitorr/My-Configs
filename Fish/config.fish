@@ -1,10 +1,29 @@
 if set -q TMUX
     # não mostrar neofetch no tmux
 else if test "$TERM" = xterm-kitty
-    neofetch --kitty ~/Imagens/Icons/jGtoVFJV.jpg
+    fastfetch
 else
     neofetch
 end
+
+function setbrilho
+    # Se nenhum argumento for passado, define valores padrão
+    if test (count $argv) -ge 1
+        set display $argv[1]
+    else
+        set display 1
+    end
+
+    if test (count $argv) -ge 2
+        set brilho $argv[2]
+    else
+        set brilho 50
+    end
+
+    # Executa o comando real
+    sudo ddcutil --display $display setvcp 10 $brilho
+end
+
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
@@ -36,8 +55,8 @@ export FZF_CTRL_T_OPTS="
    --preview 'bat -n --color=always {}'
    --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 
-# export PATH="$HOME/.rbenv/bin:$PATH"
-# eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
 # pnpm
 set -gx PNPM_HOME "/home/samuel/.local/share/pnpm"
@@ -51,3 +70,12 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # Added by LM Studio CLI (lms)
 set -gx PATH $PATH /home/samuel/.lmstudio/bin
 # End of LM Studio CLI section
+
+
+
+#rclone mount nextcloud: ~/Nextcloud \
+	#  --vfs-cache-mode full \
+	#  --vfs-cache-max-size 5G \
+	#  --vfs-cache-max-age 24h \
+	#  --cache-dir /media/hd_ext/rclone-cache \
+	#  --daemon

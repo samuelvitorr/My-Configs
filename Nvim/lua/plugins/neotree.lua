@@ -9,29 +9,33 @@ return {
   },
   config = function()
     require("neo-tree").setup({
+      -- CORREÇÃO PARA O ERRO E444: Impede que o neo-tree feche o nvim
+      close_if_last_window = false,
+
       -- Não abrir automaticamente no início
       open_on_setup = false,
       open_on_setup_file = false,
 
       -- Configurações do filesystem
       filesystem = {
+        hijack_netrw = false,
         filtered_items = {
-          visible = false,       -- não mostrar arquivos ocultos
-          hide_dotfiles = true,  -- esconder arquivos que começam com .
-          hide_gitignored = true,-- esconder arquivos ignorados pelo git
+          visible = false,        -- não mostrar arquivos ocultos
+          hide_dotfiles = true,   -- esconder arquivos que começam com .
+          hide_gitignored = true, -- esconder arquivos ignorados pelo git
         },
       },
 
       -- Mapeamentos de teclas no Neo-tree
       window = {
-          width = 25,
-          mappings = {
-            ["<space>"] = "toggle_node",
-            ["<cr>"] = "open",
-            ["S"] = "open_split",
-            ["s"] = "open_vsplit",
-          },
+        width = 25,
+        mappings = {
+          ["<space>"] = "toggle_node",
+          ["<cr>"] = "open",
+          ["S"] = "open_split",
+          ["s"] = "open_vsplit",
         },
+      },
 
       -- Aparência
       default_component_configs = {
@@ -42,19 +46,18 @@ return {
         },
         git_status = {
           symbols = {
-            added     = "✚",
-            modified  = "",
-            deleted   = "✖",
-            renamed   = "󰁕",
-            untracked = "",
-            ignored   = "",
-            unstaged  = "󰄱",
-            staged    = "",
-            conflict  = "",
+            added       = "✚",
+            modified    = "",
+            deleted     = "✖",
+            renamed     = "󰁕",
+            untracked   = "",
+            ignored     = "",
+            unstaged    = "󰄱",
+            staged      = "",
+            conflict    = "",
           },
         },
       },
     })
   end,
 }
-
