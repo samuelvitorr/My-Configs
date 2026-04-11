@@ -13,7 +13,7 @@
 - :computer: My Os linux is `Cachyos` / Windosows `11` / Wsl `2`.
 - :computer: The terminal I use most is `Kitty` and `Windows Terminal`.
 - :technologist: My code editors are `nvim`, `vscode`, `PyCharm` and `IntelliJ`.
-- :technologist: In my Linux terminal I use `fish` and in my Windows terminal I use `PowerShell` and `Neofetch` to customize.
+- :technologist: In my Linux terminal I use `fish` and in my Windows terminal I use `PowerShell` and `Neofetch` or `Fastfetch` to customize.
 - :technologist: Note in all my programs I use the `catppuccin` theme.
 
 <!-- MY SYSTEMS -->
@@ -21,7 +21,7 @@
 ## **Shortcut to Os:**
 
 <details>
-  <summary>📚 Fotos </summary>
+  <summary>📷 Fotos </summary>
   <div>
     <samp>
       <p align="center">Linux images</p>
@@ -39,7 +39,7 @@
 ## **Shortcut to Settings:**
 
 <details>
-  <summary>📚 Fotos </summary>
+  <summary>📷 Fotos </summary>
   <div>
     <samp>
       <p align="center"><a href="/Kitty/kitty.conf">Kitty Config</a></p>
