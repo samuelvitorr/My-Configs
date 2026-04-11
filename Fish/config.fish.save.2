@@ -1,0 +1,42 @@
+neofetch --kitty ~/Imagens/Icons/jGtoVFJV.jpg
+
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+end
+
+fish_add_path /home/samuel/.spicetify
+
+starship init fish | source
+
+set SPACEFISH_PROMPT_ADD_NEWLINE false
+
+set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths
+
+alias bat="$HOME/.cargo/bin/bat"
+
+function cat
+    $HOME/.cargo/bin/bat --theme="Catppuccin Mocha" $argv
+end
+
+alias l="ls -la"
+alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias cd="z"
+alias update="sudo pacman -Syuu"
+
+zoxide init fish | source
+
+export FZF_CTRL_T_OPTS="
+   --style full
+   --walker-skip .git,node_modules,target
+   --preview 'bat -n --color=always {}'
+   --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+
+# export PATH="$HOME/.rbenv/bin:$PATH"
+# eval "$(rbenv init -)"
+
+# pnpm
+set -gx PNPM_HOME "/home/samuel/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end

@@ -1,0 +1,1 @@
+oh-my-posh init pwsh --config 'C:\Users\Estudos\AppData\Local\Programs\oh-my-posh\themes\catppuccin_macchiato.omp.json' | Invoke-Expression

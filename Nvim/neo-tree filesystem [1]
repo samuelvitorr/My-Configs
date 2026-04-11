@@ -1,0 +1,11 @@
+  ~/.config/nvim                                                Size  
+    config_files                                                   -  
+    lua                                                            -  
+    spell                                                          -  
+    LICENSE                                                 11.09 KB  
+    README.md                                                  171 B  
+    init.lua                                                 1.74 KB  
+   󰘦 lazy-lock.json                                           6.19 KB  
+   󰘦 lazyvim.json                                               952 B  
+    stylua.toml                                                 58 B  
+   (2 hidden items)

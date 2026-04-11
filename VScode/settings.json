@@ -1,0 +1,262 @@
+{
+    // =========================
+    // 🧭 Interface e Aparência
+    // =========================
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.iconTheme": "catppuccin-perfect-mocha",
+    "workbench.productIconTheme": "material-product-icons",
+    "window.titleBarStyle": "custom",
+    "window.titleBarOverlay": {
+        "color": "#1e1e2e",
+        "symbolColor": "#cdd6f4",
+        "inactiveColor": "#181825"
+    },
+    "workbench.activityBar.location": "hidden",
+    "workbench.statusBar.visible": false,
+    "workbench.layoutControl.enabled": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.editor.labelFormat": "short",
+    "workbench.editor.empty.hint": "hidden",
+    "window.autoDetectColorScheme": true,
+    "workbench.preferredDarkColorTheme": "Catppuccin Noctis Mocha",
+
+    // =========================
+    // ✍️ Editor
+    // =========================
+    "editor.fontFamily": "JetBrains Mono",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 14,
+    "editor.lineHeight": 1.8,
+    "editor.tabSize": 4,
+    "editor.minimap.enabled": false,
+    "editor.renderLineHighlight": "gutter",
+    "editor.scrollbar.vertical": "hidden",
+    "editor.stickyScroll.enabled": false,
+    "editor.parameterHints.enabled": false,
+    "editor.accessibilitySupport": "off",
+    "editor.semanticHighlighting.enabled": false,
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "editor.suggestSelection": "first",
+    "editor.linkedEditing": true,
+    "editor.hideCursorInOverviewRuler": true,
+    "editor.unicodeHighlight.includeComments": true,
+
+    // =========================
+    // 🧱 Formatação e Lint
+    // =========================
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[prisma]": {
+        "editor.formatOnSave": true
+    },
+    "eslint.validate": ["javascript", "javascriptreact", "graphql"],
+
+    // =========================
+    // ⚡ Emmet e Tailwind
+    // =========================
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact",
+        "mdx": "javascriptreact"
+    },
+    "emmet.syntaxProfiles": {
+        "javascript": "jsx",
+        "mdx": "jsx"
+    },
+    "emmet.variables": { "lang": "pt" },
+    "tailwindCSS.experimental.classRegex": [
+        [
+            "tv\\(([^)]*)\\)",
+            "[\"'`]([^\"'`]*).*?[\"'`]"
+        ],
+        "class:\\s*?[\"'`]([^\"'`]*).*?,"
+    ],
+
+    // =========================
+    // 📦 Explorer
+    // =========================
+    "explorer.sortOrder": "foldersNestsFiles",
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+        "package.json": ".eslint*, prettier*, tsconfig*, vite*, pnpm-*, bun.lockb, nest*, package-lock*",
+        "tailwind.config.*": "tailwind.config*, postcss.config*",
+        ".env.local": ".env*",
+        ".env": ".env*"
+    },
+    "explorer.compactFolders": false,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmPasteNative": false,
+    "explorer.confirmPaste": false,
+
+    // =========================
+    // 🧹 Arquivos e Auto Save
+    // =========================
+    "files.autoSave": "afterDelay",
+    "files.associations": {
+        ".env.*": "dotenv",
+        ".dev.vars": "dotenv",
+        ".prettierrc": "json",
+        "*.css": "css"
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        ".vscode": true
+    },
+
+    // =========================
+    // 🧠 TypeScript / JavaScript
+    // =========================
+    "typescript.tsserver.log": "off",
+    "typescript.suggest.autoImports": true,
+    "typescript.preferences.preferTypeOnlyAutoImports": true,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "javascript.suggest.autoImports": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "npm.packageManager": "pnpm",
+
+    // =========================
+    // 🧩 Git e GitLens
+    // =========================
+    "git.enableSmartCommit": true,
+    "git.openRepositoryInParentFolders": "always",
+    "gitlens.codeLens.recentChange.enabled": false,
+    "gitlens.codeLens.authors.enabled": false,
+
+    // =========================
+    // 💻 Terminal
+    // =========================
+    "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.gpuAcceleration": "on",
+    "terminal.integrated.showExitAlert": false,
+    "terminal.integrated.enablePersistentSessions": false,
+    "terminal.integrated.tabs.hideCondition": "never",
+    "terminal.integrated.profiles.linux": {
+    
+        "bash": {
+            "path": "bash",
+            "env": {
+                "JAVA_HOME": "/home/samuel/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/java/latest"
+            },
+            "args": [
+                "--rcfile",
+                "/home/samuel/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/.bashrc"
+            ]
+        },
+        "JavaSE-11 LTS": {
+            "overrideName": true,
+            "env": {
+                "JAVA_HOME": "/home/samuel/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/java/11"
+            },
+            "path": "bash",
+            "args": [
+                "--rcfile",
+                "/home/samuel/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/.bashrc"
+            ]
+        },
+        "JavaSE-17 LTS": {
+            "overrideName": true,
+            "env": {
+                "JAVA_HOME": "/usr/lib/jvm/java-17-openjdk"
+            },
+            "path": "bash",
+            "args": [
+                "--rcfile",
+                "/home/samuel/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/.bashrc"
+            ]
+        },
+        "JavaSE-21 LTS": {
+            "overrideName": true,
+            "env": {
+                "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk"
+            },
+            "path": "bash",
+            "args": [
+                "--rcfile",
+                "/home/samuel/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/.bashrc"
+            ]
+        },
+        "JavaSE-25 LTS": {
+            "overrideName": true,
+            "env": {
+                "JAVA_HOME": "/home/samuel/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/java/latest"
+            },
+            "path": "bash",
+            "args": [
+                "--rcfile",
+                "/home/samuel/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/.bashrc"
+            ]
+        }
+    },
+
+    // =========================
+    // ☕ Java e Maven
+    // =========================
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-11",
+            "path": "/home/samuel/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/java/11"
+        },
+        {
+            "name": "JavaSE-17",
+            "path": "/usr/lib/jvm/java-17-openjdk"
+        },
+        {
+            "name": "JavaSE-21",
+            "path": "/usr/lib/jvm/java-21-openjdk"
+        },
+        {
+            "name": "JavaSE-25",
+            "path": "/home/samuel/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/java/latest",
+            "default": true
+        }
+    ],
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.debug.settings.hotCodeReplace": "auto",
+    "java.maxConcurrentBuilds": 8,
+    "maven.executable.path": "/home/samuel/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/maven/latest/bin/mvn",
+    "maven.terminal.customEnv": [
+        { "environmentVariable": "JAVA_HOME", "value": "/usr/lib/jvm/java-21-openjdk" }
+    ],
+
+    // =========================
+    // 🧰 Outras extensões úteis
+    // =========================
+    "cSpell.language": "en,pt",
+    "cSpell.diagnosticLevel": "Hint",
+    "trailing-spaces.backgroundColor": "rgba(255,0,0,0.1)",
+    "trailing-spaces.includeEmptyLines": false,
+    "database-client.autoSync": true,
+    "markdown-preview-enhanced.previewTheme": "atom-dark.css",
+    "markdown-preview-enhanced.codeBlockTheme": "one-dark.css",
+    "markdown-preview-enhanced.revealjsTheme": "moon.css",
+    "update.mode": "manual",
+    "update.showReleaseNotes": false,
+    "security.workspace.trust.untrustedFiles": "newWindow",
+    "java.import.gradle.home": "/home/samuel/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/gradle/latest",
+    "java.import.gradle.java.home": "/home/samuel/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/java/latest",
+    "redhat.telemetry.enabled": true,
+    "terminal.external.linuxExec": "kitty",
+    "terminal.integrated.defaultProfile.linux": "JavaSE-25 LTS",
+    "yaml.schemas": {
+        "file:///home/samuel/.vscode/extensions/continue.continue-1.2.9-linux-x64/config-yaml-schema.json": [
+            ".continue/**/*.yaml"
+        ]
+    },
+    "diffEditor.codeLens": true
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+
+  // ======================================
+  //         LOGO / IMAGEM
+  // ======================================
+  "logo": {
+    "source": "~/Imagens/Icons/gxVbkEXk.jpg",
+    "type": "kitty",
+    "height": 10,
+    "width": 22,
+    "padding": { "top": 1, "left": 2 },
+  },
+
+  // ======================================
+  //         DISPLAY
+  // ======================================
+  "display": {
+    "separator": " ",
+  },
+
+  // ======================================
+  //         MÓDULOS
+  // ======================================
+  "modules": [
+    "break",
+
+    // Hardware Information
+    {
+      "type": "custom",
+      "key": "󰍛 CPU",
+      "format": "Intel i7-1255U",
+    },
+    { "type": "custom", "key": " GPU", "format": "Intel UHD Graphics 630" },
+    {
+      "type": "memory",
+      "key": "󰑭 Memory",
+    },
+
+    // Software Information
+    { "type": "os", "key": " Distro" },
+    { "type": "wm", "key": " WM" },
+    { "type": "shell", "key": " Shell" },
+    { "type": "terminal", "key": " Terminal" },
+
+    // Player de música
+    { "type": "media", "key": "󰝚 Music", "keyColor": "36" },
+    { "type": "player", "key": " Player", "keyColor": "36" },
+
+    // Barra de cores inferior estilo Bubble
+    {
+      "type": "custom",
+      "format": "\u001b[38;2;245;219;178m \u001b[38;2;242;205;205m \u001b[38;2;203;166;247m \u001b[38;2;129;161;193m \u001b[38;2;242;205;205m \u001b[38;2;203;166;247m \u001b[38;2;245;219;178m \u001b[0m",
+    },
+    "break",
+  ],
+}
