@@ -24,6 +24,25 @@ map("n", "<C-l>", "<C-w>l", opts)
 map("n", "<leader>w", ":w<CR>", opts)
 map("n", "<leader>h", ":noh<CR>", opts)
 
+-- Save with Ctrl+S
+map({ "n", "i" }, "<C-s>", "<Esc>:w<CR>", opts)
+
+-- Save and quit with Ctrl+Q
+map({ "n", "i" }, "<C-q>", "<Esc>:wq<CR>", opts)
+
+-- Close all buffers
+vim.api.nvim_create_user_command("CloseAllBuffers", function()
+  local current = vim.fn.bufnr("%")
+  local buffers = vim.fn.range(1, vim.fn.bufnr("$"))
+  for _, buf in ipairs(buffers) do
+    if vim.fn.buflisted(buf) == 1 then
+      vim.cmd(string.format("bdelete! %d", buf))
+    end
+  end
+end, {})
+
+map("n", "<leader>ba", ":CloseAllBuffers<CR>", { desc = "Close all buffers" })
+
 -- diagnostics (LSP)
 map("n", "gl", vim.diagnostic.open_float, opts)
 

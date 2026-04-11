@@ -7,6 +7,7 @@ return {
 	opts = {
 		explorer = { enabled = true },
 		indent = { enabled = true,},
+		notify = { enabled = false },
     zen = { enabled = true,},
 		picker = {
 			enabled = true,

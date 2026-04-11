@@ -1,9 +1,7 @@
-require("config.utils")
-require("config.file")
-require("config.spell")
-require("config.vim")
-require("config.diagnostics")
+-- Carrega todas as configurações pessoais
+require("config.options")
+require("config.keymaps")
+require("config.lsp")
 require("config.theme")
-
 
 return {}

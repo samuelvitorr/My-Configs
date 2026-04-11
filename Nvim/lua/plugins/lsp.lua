@@ -7,33 +7,15 @@ return {
       "hrsh7th/cmp-nvim-lsp",
       {
         "folke/lazydev.nvim",
-        ft = "lua", -- only load on lua files
+        ft = "lua",
         opts = {
           library = {
-            -- See the configuration section for more details
-            -- Load luvit types when the `vim.uv` word is found
             { path = "${3rd}/luv/library", words = { "vim%.uv" } },
           },
         },
       },
     },
     config = function()
-      require("mason-lspconfig").setup({
-        automatic_enable = false,
-        ensure_installed = {
-          -- formatters
-          -- "prettier", -- install manually with 'npm i -g prettier'
-          -- "stylua", -- install manually with ':MasonInstall stylua'
-
-          -- LSPs
-          "ruff",
-          "taplo",
-          "lua_ls",
-          "ts_ls",
-          "pyright",
-        },
-      })
-
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       local on_attach = function(_, bufnr)
@@ -46,21 +28,48 @@ return {
         map("n", "<leader>ca", vim.lsp.buf.code_action, opts)
       end
 
-      require("lspconfig").pyright.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
+      local lspconfig = require("lspconfig")
+
+      require("mason-lspconfig").setup({
+        automatic_enable = true,
+        ensure_installed = {
+          "ruff",
+          "taplo",
+          "lua_ls",
+          "ts_ls",
+          "pyright",
+          "rust_analyzer",
+          "clangd",
+          "html",
+          "cssls",
+          "jsonls",
+          "yamlls",
+          "svelte",
+        },
+        handlers = {
+          function(server_name)
+            lspconfig[server_name].setup({
+              on_attach = on_attach,
+              capabilities = capabilities,
+            })
+          end,
+        },
       })
-      require("lspconfig").ruff.setup({
+
+      lspconfig.ruff.setup({
         on_attach = on_attach,
         capabilities = capabilities,
-      })
-      require("lspconfig").ts_ls.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-      })
-      require("lspconfig").lua_ls.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
+        settings = {
+          ruff = {
+            lint = {
+              select = { "E", "F", "W", "I", "N", "UP", "B", "A", "C4", "C9", "ISC", "RUF", "PIE" },
+              ignore = { "E501" },
+            },
+            format = {
+              select = { "isort", "black" },
+            },
+          },
+        },
       })
     end,
   },

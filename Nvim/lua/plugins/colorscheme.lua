@@ -4,6 +4,8 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
+    lazy = false,
+    priority = 1000,
     opts = {
       flavour = "mocha",
       integrations = {
@@ -33,6 +35,7 @@ return {
             information = { "undercurl" },
           },
         },
+        lualine = { enabled = true },
         navic = { enabled = true, custom_bg = "lualine" },
         neotest = true,
         neotree = true,

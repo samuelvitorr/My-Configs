@@ -1,5 +1,5 @@
-if set -q TMUX
-    # não mostrar neofetch no tmux
+if test -n "$TMUX"
+    # dentro do tmux
 else if test "$TERM" = xterm-kitty
     fastfetch
 else
@@ -24,7 +24,6 @@ function setbrilho
     sudo ddcutil --display $display setvcp 10 $brilho
 end
 
-
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
@@ -45,15 +44,17 @@ end
 alias l="ls -la"
 alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 alias cd="z"
+alias cdi="zi"
 alias update="sudo pacman -Syuu"
 
 zoxide init fish | source
 
-export FZF_CTRL_T_OPTS="
-   --style full
-   --walker-skip .git,node_modules,target
-   --preview 'bat -n --color=always {}'
-   --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+set -gx FZF_DEFAULT_OPTS "
+--color=bg+:#1e1e2e,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8
+--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc
+--color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8
+--border=rounded
+"
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
@@ -71,11 +72,12 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 set -gx PATH $PATH /home/samuel/.lmstudio/bin
 # End of LM Studio CLI section
 
-
-
 #rclone mount nextcloud: ~/Nextcloud \
-	#  --vfs-cache-mode full \
-	#  --vfs-cache-max-size 5G \
-	#  --vfs-cache-max-age 24h \
-	#  --cache-dir /media/hd_ext/rclone-cache \
-	#  --daemon
+#  --vfs-cache-mode full \
+#  --vfs-cache-max-size 5G \
+#  --vfs-cache-max-age 24h \
+#  --cache-dir /media/hd_ext/rclone-cache \
+#  --daemon
+
+# opencode
+fish_add_path /home/samuel/.opencode/bin

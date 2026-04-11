@@ -1,4 +1,6 @@
+-- LazyVim plugins import
+-- All .lua files in this directory are loaded automatically
 return {
-  -- Carrega as configurações pessoais como um plugin
-  { import = "plugins.personal" },
+  { import = "lazyvim.plugins" },
+  { import = "plugins" },
 }
