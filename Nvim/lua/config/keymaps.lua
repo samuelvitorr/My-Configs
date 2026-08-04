@@ -167,3 +167,13 @@ vim.keymap.set("n", "<leader>ss", function()
     utils.notify("Spell checker ativado", vim.log.levels.INFO)
   end
 end, { desc = "Toggle Spell Checker" })
+
+-- Timerly standalone
+vim.api.nvim_create_user_command("Timer", function()
+  vim.o.showtabline = 0
+  vim.o.laststatus = 0
+  vim.wo.number = false
+  vim.o.scl = "no"
+  vim.o.cmdheight = 0
+  vim.cmd "TimerlyToggle"
+end, {})

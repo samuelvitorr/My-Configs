@@ -3,7 +3,7 @@ return {
     "folke/noice.nvim",
     opts = {
       notify = {
-        enabled = false,
+        enabled = true,
       },
       presets = {
         bottom_search = true,

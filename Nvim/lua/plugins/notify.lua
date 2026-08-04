@@ -2,7 +2,6 @@ return {
   {
     "rcarriga/nvim-notify",
     opts = {
-      -- level = 3,
       render = "minimal",
       stages = "static",
       timeout = 2000,
@@ -13,5 +12,8 @@ return {
         return math.floor(vim.o.columns * 0.75)
       end,
     },
+    config = function(_, opts)
+      require("notify").setup(opts)
+    end,
   },
 }

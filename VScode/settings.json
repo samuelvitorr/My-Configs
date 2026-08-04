@@ -18,7 +18,7 @@
     "workbench.editor.labelFormat": "short",
     "workbench.editor.empty.hint": "hidden",
     "window.autoDetectColorScheme": true,
-    "workbench.preferredDarkColorTheme": "Catppuccin Noctis Mocha",
+    "workbench.preferredDarkColorTheme": "Catppuccin Mocha",
 
     // =========================
     // ✍️ Editor
@@ -146,7 +146,6 @@
     "terminal.integrated.enablePersistentSessions": false,
     "terminal.integrated.tabs.hideCondition": "never",
     "terminal.integrated.profiles.linux": {
-    
         "bash": {
             "path": "bash",
             "env": {
@@ -171,7 +170,7 @@
         "JavaSE-17 LTS": {
             "overrideName": true,
             "env": {
-                "JAVA_HOME": "/usr/lib/jvm/java-17-openjdk"
+                "JAVA_HOME": "/home/samuel/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/java/17"
             },
             "path": "bash",
             "args": [
@@ -193,7 +192,18 @@
         "JavaSE-25 LTS": {
             "overrideName": true,
             "env": {
-                "JAVA_HOME": "/home/samuel/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/java/latest"
+                "JAVA_HOME": "/home/samuel/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/java/25"
+            },
+            "path": "bash",
+            "args": [
+                "--rcfile",
+                "/home/samuel/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/.bashrc"
+            ]
+        },
+        "JavaSE-26": {
+            "overrideName": true,
+            "env": {
+                "JAVA_HOME": "/usr/lib/jvm/java-26-openjdk"
             },
             "path": "bash",
             "args": [
@@ -207,23 +217,27 @@
     // ☕ Java e Maven
     // =========================
     "java.configuration.runtimes": [
-        {
-            "name": "JavaSE-11",
-            "path": "/home/samuel/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/java/11"
-        },
-        {
-            "name": "JavaSE-17",
-            "path": "/usr/lib/jvm/java-17-openjdk"
-        },
-        {
-            "name": "JavaSE-21",
-            "path": "/usr/lib/jvm/java-21-openjdk"
-        },
-        {
-            "name": "JavaSE-25",
-            "path": "/home/samuel/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/java/latest",
-            "default": true
-        }
+      {
+        "name": "JavaSE-11",
+        "path": "/home/samuel/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/java/11"
+      },
+      {
+        "name": "JavaSE-17",
+        "path": "/home/samuel/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/java/17"
+      },
+      {
+        "name": "JavaSE-21",
+        "path": "/usr/lib/jvm/java-21-openjdk"
+      },
+      {
+        "name": "JavaSE-25",
+        "path": "/home/samuel/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/java/25"
+      },
+      {
+        "name": "JavaSE-26",
+        "path": "/usr/lib/jvm/java-26-openjdk",
+        "default": true
+      }
     ],
     "java.compile.nullAnalysis.mode": "automatic",
     "java.configuration.updateBuildConfiguration": "automatic",
@@ -256,7 +270,14 @@
     "yaml.schemas": {
         "file:///home/samuel/.vscode/extensions/continue.continue-1.2.9-linux-x64/config-yaml-schema.json": [
             ".continue/**/*.yaml"
+        ],
+        "file:///home/samuel/.vscode/extensions/continue.continue-1.2.22-linux-x64/config-yaml-schema.json": [
+            ".continue/**/*.yaml"
+        ],
+        "file:///home/samuel/.vscode/extensions/continue.continue-2.0.0-linux-x64/config-yaml-schema.json": [
+            ".continue/**/*.yaml"
         ]
     },
-    "diffEditor.codeLens": true
+    "diffEditor.codeLens": true,
+    "catppuccin-noctis-icons.hidesExplorerArrows": false
 }

@@ -18,6 +18,7 @@ return {
 			},
 		},
 		quickfile = { enabled = false },
+    dashboard = { enabled = false },
 	},
 	keys = {
 	-- Picker

@@ -1,0 +1,7 @@
+**/.git/
+node_modules/
+Opencode/bin/
+Opencode/node_modules/
+Opencode/package.json
+Opencode/bun.lock
+Opencode/package-lock.json
