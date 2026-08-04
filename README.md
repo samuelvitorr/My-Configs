@@ -13,6 +13,8 @@
 - :computer: My Os linux is `Cachyos` / Windosows `11` / Wsl `2`.
 - :computer: The terminal I use most is `Kitty` and `Windows Terminal`.
 - :technologist: My code editors are `nvim`, `vscode`, `PyCharm` and `IntelliJ`.
+- :robot: My AI assistant is `opencode` with custom agents, skills and commands.
+- :computer: My shell prompt is `starship` and I customize `spicetify` with the `catppuccin` theme.
 - :technologist: In my Linux terminal I use `fish` and in my Windows terminal I use `PowerShell` and `Neofetch` or `Fastfetch` to customize.
 - :technologist: Note in all my programs I use the `catppuccin` theme.
 
@@ -60,10 +62,14 @@
       <p>Note: For Nvim to stay the same, you need to clone the <a href="https://www.lazyvim.org/installation">Lazzy vim repository</a> and follow all the steps and then clone my settings (If there is an error, contact me)</p>
       <p align="center"><a href="/VScode/settings.json">VSCode Config</a></p>
       <img src="/Images/2025-10-17_18-50-44.png" width="100%">
-      <p align="center">Pycharm</p>
+      <p align="center"><a href="/PyCharm/">PyCharm Config</a></p>
       <img src="/Images/2025-10-17_18-57-22.png" width="100%">
-      <p align="center">IntelliJ</p>
+      <p align="center"><a href="/IntelliJ/">IntelliJ Config</a></p>
       <img src="/Images/2025-10-17_18-56-09.png" width="100%">
+      <p>Note: To (re)install the JetBrains plugins run <code>./scripts/install-jetbrains-plugins.sh pycharm</code> or <code>./scripts/install-jetbrains-plugins.sh idea</code></p>
+      <p align="center"><a href="/Opencode/">OpenCode Config</a></p>
+      <p align="center"><a href="/starship/starship.toml">Starship Config</a></p>
+      <p align="center"><a href="/spicetify/">Spicetify Config</a></p>
       <p align="center"><a href="/Fish/config.fish">Fish Config</a></p>
       <img src="/Images/2025-10-17_18-47-04.png" width="100%">
       <p align="center">PowerShell</p>
