@@ -1,0 +1,16 @@
+com.github.catppuccin.jetbrains
+com.github.catppuccin.jetbrains_icons
+com.codeium.intellij
+ru.adelf.idea.dotenv
+org.editorconfig.editorconfigjetbrains
+net.ashald.envfile
+izhangzhihao.rainbow.brackets
+com.haulmont.jpab
+dev.flikas.idea.spring.boot.assistant.plugin
+sandipchitale.springinitializr
+org.toml.lang
+com.intellij.properties
+com.intellij.jpa.jpb.model
+org.intellij.plugins.hcl
+aws.toolkit.core
+org.jetbrains.security.package-checker

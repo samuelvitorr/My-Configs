@@ -1,0 +1,3 @@
+com.github.catppuccin.jetbrains
+com.github.catppuccin.jetbrains_icons
+com.codeium.intellij
