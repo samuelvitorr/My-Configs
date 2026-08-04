@@ -1,0 +1,2 @@
+# custom IntelliJ IDEA VM options (expand/override 'bin/idea64.vmoptions')
+-Dawt.toolkit.name=WLToolkit

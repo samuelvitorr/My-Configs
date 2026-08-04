@@ -1,0 +1,4 @@
+# custom PyCharm VM options (expand/override 'bin/pycharm64.vmoptions')
+-Dawt.toolkit.name=WLToolkit
+-Dsun.java2d.vulkan=true
+-Dsun.java2d.vulkan.accelsd=true
